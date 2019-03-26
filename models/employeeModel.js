@@ -1,7 +1,6 @@
-//lib for management of the database
-const mongoose = require('mongoose');
+const mongoose = require('mongoose'); //lib para o gerenciamento do banco de dados
 
-//schema of employee
+//schema do funcionário
 const employeeSchema = new mongoose.Schema({
     name: {
         type: String,
@@ -25,4 +24,5 @@ const employeeSchema = new mongoose.Schema({
     }
 });
 
+//Tornando o modelo visível fora do arquivo
 module.exports = mongoose.model("Employee", employeeSchema);
