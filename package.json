@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/MarceloNascc/trainee-softeam/issues"
   },
-  "homepage": "https://github.com/MarceloNascc/trainee-softeam#readme"
+  "homepage": "https://github.com/MarceloNascc/trainee-softeam#readme",
+  "dependencies": {
+    "mongoose": "^5.4.20"
+  }
 }
