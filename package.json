@@ -1,0 +1,19 @@
+{
+  "name": "trainee-softeam",
+  "version": "1.0.0",
+  "description": "Criação de um CRUD para o processo de trainee da Softeam",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MarceloNascc/trainee-softeam.git"
+  },
+  "author": "João Marcelo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MarceloNascc/trainee-softeam/issues"
+  },
+  "homepage": "https://github.com/MarceloNascc/trainee-softeam#readme"
+}
