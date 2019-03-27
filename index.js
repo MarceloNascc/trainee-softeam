@@ -1,6 +1,7 @@
 const express = require('express'); //controle de rotas
 const bodyParser = require('body-parser'); //converte JSON
 const mongoose = require('mongoose'); //gerenciamento do banco de dados
+const employeeRouter = require('./router/employeeRouter');
 
 mongoose.Promise = global.Promise; //erros com promise
 mongoose.connect('mongodb://localhost:27017/traineeSofteam'); //conectando com o db
@@ -13,6 +14,7 @@ app.use(bodyParser.urlencoded({ extended: true })); //permite valores além de s
 
 //criando um middleware para teste da aplicação
 app.use('/teste', (req, res) => res.json('A aplicação está rodando :)'));
+app.use('/employee', employeeRouter());
 
 
 //colocando a aplicação para rodar
