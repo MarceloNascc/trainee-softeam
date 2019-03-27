@@ -7,11 +7,12 @@ const employeeSchema = new mongoose.Schema({
         required: true,
     },
     cpf: {
-        type: Number,
+        type: String,
+        required: true,
         unique: true
     },
     phone: {
-        type: Number
+        type: String
     },
     code: {
         type: String
