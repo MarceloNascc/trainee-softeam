@@ -5,7 +5,7 @@ const readAll = async (req, res) => {
     try {
         const employees = await Employee.find({});
 
-        return res.status(200).json({ message: 'Todos os funcionários:', employees });
+        return res.status(200).json({ message: 'Todos os funcionários', employees });
     } catch (error) {
         return res.status(500).json({message: 'Erro ao tentar mostrar todos os funcionários:', error});
     }
@@ -21,7 +21,7 @@ const readOne = async (req, res) => {
             return res.status(404).json({message: `Funcionário com cpf = ${cpf} não encontrado`});
         }
         
-        return res.status(200).json({ message: 'Funcionário:', employee });
+        return res.status(200).json({ message: 'Funcionário específico', employee });
     } catch (error) {
         return res.status(500).json({message: `Erro ao tentar mostrar o funcionário com cpf = ${cpf}:`, error});
     }
@@ -66,7 +66,7 @@ const delet = async (req, res) => {
             return res.status(404).json({message: `Funcionário com cpf = ${cpf} não encontrado`});
         }
         
-        return res.status(200).json({ message: `Funcionário removido:`, employee });
+        return res.status(200).json({ message: `Funcionário removido!`, employee });
     } catch (error) {
         return res.status(500).json({message: `Erro ao tentar remover o funcionário com cpf = ${cpf}:`, error});
     }
@@ -87,9 +87,9 @@ const create = async (req, res) => {
         });
         
         await employee.save();
-        return res.status(201).json({ message: 'Funcionário adicionado:', employee });
+        return res.status(201).json({ message: 'Funcionário adicionado!', employee });
     } catch (error) {
-        return res.status(500).json({message: 'Erro ao tentar adicionar um funcionário:', error});
+        return res.status(500).json({message: 'Erro ao tentar adicionar um funcionário', error});
     }
 };
 
