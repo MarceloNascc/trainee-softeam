@@ -13,7 +13,7 @@
     "url": "git+https://github.com/MarceloNascc/trainee-softeam.git"
   },
   "author": "João Marcelo",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/MarceloNascc/trainee-softeam/issues"
   },
@@ -24,6 +24,9 @@
     "mongoose": "^5.4.20"
   },
   "devDependencies": {
-    "nodemon": "^1.18.10"
+    "chai": "^4.2.0",
+    "mocha": "^6.0.2",
+    "nodemon": "^1.18.10",
+    "supertest": "^4.0.2"
   }
 }
