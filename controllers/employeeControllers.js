@@ -15,7 +15,7 @@ const readAll = async (req, res) => {
 const readOne = async (req, res) => {
     const { cpf } = req.params;
     try {
-        const employee = await Employee.findOne({ cpf: parseInt(cpf) });
+        const employee = await Employee.findOne({ cpf: cpf });
 
         if(employee === null){
             return res.status(404).json({message: `Funcionário com cpf = ${cpf} não encontrado`});
@@ -29,16 +29,20 @@ const readOne = async (req, res) => {
 
 //funcionalidade: atualizar um funcionário
 const update = async (req, res) => {
-    const { cpf: cpfParam } = req.params;
+    const { cpf } = req.params;
     try {
-        const { name: newName, cpf, phone: newPhone, code: newCode, number: newNumber, complement: newComplement } = req.body;
+        const { name: newName, phone: newPhone, code: newCode, number: newNumber, complement: newComplement } = req.body;
+        
+        if(!newName){
+            return res.status(400).json({message: `Nome é obrigatório`});
+        }
         const updateEmployee = await Employee.findOneAndUpdate(
             {
-                cpf: cpfParam
+                cpf: cpf
             }, 
             {
                 name: newName,
-                cpf,
+                cpf: cpf,
                 phone: newPhone,
                 code: newCode,
                 number: parseInt(newNumber),
