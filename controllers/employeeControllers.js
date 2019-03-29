@@ -21,7 +21,7 @@ const readOne = async (req, res) => {
             return res.status(404).json({message: `Funcionário com cpf = ${cpf} não encontrado`});
         }
         
-        return res.status(200).json({ message: 'Funcionário específico', employee });
+        return res.status(200).json({ message: 'Funcionário encontrado', employee });
     } catch (error) {
         return res.status(500).json({message: `Erro ao tentar mostrar o funcionário com cpf = ${cpf}:`, error});
     }
