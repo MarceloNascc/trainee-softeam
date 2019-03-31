@@ -4,9 +4,7 @@ Este repositório faz parte do processo de treinamento (trainee 2019) do backend
 
 ### Estrutura de Pastas
 ```
-### Layout típico de diretório top-level
 
-.
 ├── node_modules            # Onde as dependências estão instaladas
 ├── controllers             # Onde o controle da aplicação fica, no nosso caso as operações de criar, remover, atualizar e buscar (Crud)           
 ├── test                    # teste da nossa aplicação
