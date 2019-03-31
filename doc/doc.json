@@ -1,0 +1,175 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "description" : "CRUD de funcionários",
+    "version" : "1.0.0",
+    "title" : "Trainee Softeam",
+    "termsOfService" : "nullable",
+    "contact" : {
+      "name" : "João Marcelo",
+      "url" : "https://github.com/MarceloNascc/trainee-softeam",
+      "email" : "joao.nascimento@dcomp.ufs.br"
+    },
+    "license" : {
+      "name" : "2018 © SOFTEAM",
+      "url" : "http://softeam.com.br"
+    }
+  },
+  "basePath" : "/localhost:3000",
+  "schemes" : [ "https" ],
+  "paths" : {
+    "/employee" : {
+      "get" : {
+        "tags" : [ "employee" ],
+        "summary" : "Retorna todos os funcionários",
+        "description" : "Retornar todos os funcionários",
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "Todos os funcionários",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/Employee"
+              }
+            }
+          },
+          "500" : {
+            "description" : "Erro ao tentar mostrar todos os funcionários"
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "employee" ],
+        "summary" : "Cria um novo funcionário",
+        "description" : "Criar um novo funcionário",
+        "parameters" : [ ],
+        "responses" : {
+          "201" : {
+            "description" : "Funcionário adicionado!",
+            "schema" : {
+              "$ref" : "#/definitions/Employee"
+            }
+          },
+          "500" : {
+            "description" : "Erro ao tentar adicionar um funcionário"
+          }
+        }
+      }
+    },
+    "/employee/{cpf}" : {
+      "get" : {
+        "tags" : [ "employee" ],
+        "summary" : "Retorna um funcionário a partir do cpf",
+        "description" : "Retorna um funcionário específico",
+        "parameters" : [ {
+          "name" : "cpf",
+          "in" : "path",
+          "description" : "cpf do funcionário desejado",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Funcionário encontrado",
+            "schema" : {
+              "$ref" : "#/definitions/Employee"
+            }
+          },
+          "404" : {
+            "description" : "Funcionário com CPF = cpf não encontrado"
+          },
+          "500" : {
+            "description" : "Erro ao tentar mostrar o funcionário com CPF = cpf"
+          }
+        }
+      },
+      "put" : {
+        "tags" : [ "employee" ],
+        "summary" : "Atualiza um funcionário",
+        "description" : "Atualiza um funcionário específico",
+        "parameters" : [ {
+          "name" : "cpf",
+          "in" : "path",
+          "description" : "cpf do funcionário a ser atualizado",
+          "required" : true,
+          "type" : "string",
+          "format" : "cpf"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Funcionário atualizado",
+            "schema" : {
+              "$ref" : "#/definitions/Employee"
+            }
+          },
+          "404" : {
+            "description" : "Funcionário com CPF = cpf não encontrado"
+          },
+          "500" : {
+            "description" : "Erro ao tentar atualizar o funcionário com CPF = cpf"
+          }
+        }
+      },
+      "delete" : {
+        "tags" : [ "employee" ],
+        "summary" : "Deleta um funcionário",
+        "description" : "Remove um funcionário específico",
+        "parameters" : [ {
+          "name" : "cpf",
+          "in" : "path",
+          "description" : "cpf do funcionário a ser deletado",
+          "required" : true,
+          "type" : "string",
+          "format" : "cpf"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Funcionário removido!",
+            "schema" : {
+              "$ref" : "#/definitions/Employee"
+            }
+          },
+          "404" : {
+            "description" : "Funcionário com CPF = cpf não encontrado"
+          },
+          "500" : {
+            "description" : "Erro ao tentar remover o funcionário com CPF = cpf"
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "Employee" : {
+      "type" : "object",
+      "required" : [ "cpf", "name" ],
+      "properties" : {
+        "name" : {
+          "type" : "string",
+          "example" : "Marcelo"
+        },
+        "cpf" : {
+          "type" : "string",
+          "example" : "058.528.673-87"
+        },
+        "phone" : {
+          "type" : "string",
+          "example" : "(79) 9 9657-2547"
+        },
+        "code" : {
+          "type" : "string",
+          "example" : "49400-000"
+        },
+        "complement" : {
+          "type" : "string",
+          "example" : "perto do que você quiser"
+        },
+        "number" : {
+          "type" : "number",
+          "example" : 20.0
+        }
+      }
+    }
+  }
+}
