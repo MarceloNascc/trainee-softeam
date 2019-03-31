@@ -55,7 +55,7 @@ Você irá ver os erros no console da aplicação.
 
 #### mocha
 
-Para executar os testes é preciso rodar os seguintes comandos, no diretório do mini projeto:
+Para executar os testes é preciso fazer a instalção global do [mocha]. Para isso basta rodar os seguintes comandos, no diretório do mini projeto:
 
 ```sh
 $ npm install -g mocha
@@ -64,7 +64,6 @@ $ mocha
 
 [node.js]: <http://nodejs.org>  
 [NPM]: <https://www.npmjs.com/>
-[chai]: <https://www.chaijs.com/>
 [mocha]: <https://mochajs.org/>
 [MongoDB]: <https://www.mongodb.com/>
 [Postman]: <https://www.getpostman.com/>
