@@ -53,7 +53,7 @@ abra [http://localhost:8000](http://localhost:8000) para testar no Postman ou ap
 O aplicativo é atualizado automaticamente se você fizer edições.<br>
 Você irá ver os erros no console da aplicação.
 
-#### mocha
+#### Mocha
 
 Para executar os testes é preciso fazer a instalção global do [mocha]. Para isso basta rodar os seguintes comandos, no diretório do mini projeto:
 
