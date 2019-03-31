@@ -1,6 +1,6 @@
 # trainee-softeam
 
-Este repositório faz parte do processo de treinamento (trainee 2019) do backend da softeam.
+Este mini projeto faz parte do processo de treinamento (trainee 2019) do backend da softeam.
 
 ### Estrutura de Pastas
 ```
