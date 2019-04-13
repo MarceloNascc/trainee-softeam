@@ -22,7 +22,7 @@ const employeeTwo = new Employee ({
 });
 
 before(async () => {
-    await Employee.remove({});
+    await Employee.deleteMany({});
 });
 
 describe('Testes do CRUD de funcionários', () => {
