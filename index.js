@@ -6,15 +6,14 @@ const swagger = require('swagger-ui-express'); //documentação
 const swaggerDoc = require('./doc/doc.json');
 
 mongoose.Promise = global.Promise; //erros com promise
-mongoose.connect('mongodb://localhost:27017/traineeSofteam'); //conectando com o db
+mongoose.connect('mongodb://trainee:senhaTrainee@localhost:27017/traineeSofteam', {useNewUrlParser: true}); //conectando com o db
 
 const app = express();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true })); //permite valores além de strings
 
-//criando uma rota de teste da aplicação
-app.use('/teste', (req, res) => res.json('A aplicação está rodando :)'));
+app.use('/teste', (req, res) => res.json('A aplicação está rodando :)')); //criando uma rota de teste da aplicação
 app.use('/employee', employeeRouter());
 app.use('/', swagger.serve, swagger.setup(swaggerDoc));
 
